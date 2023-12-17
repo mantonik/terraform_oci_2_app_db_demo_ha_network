@@ -30,6 +30,14 @@ git clone --single-branch --branch dev  git@github.com:mantonik/terraform_oci_2_
 
 
 git fetch origin dev
+
+# pull specific branch
+git checkout dev 
+
+# pull from repo
+git pull
+ git fet 
+
 git pull
 
 ===================================
