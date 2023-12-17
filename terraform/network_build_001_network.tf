@@ -15,7 +15,7 @@ resource "oci_identity_compartment" "app_compartment" {
 resource "oci_core_vcn" "vcn_app" {
   compartment_id = oci_identity_compartment.app_compartment.id
   cidr_block     = "10.20.10.0/24"
-  display_name   = "APP_VCN"
+  display_name   = "vcn_app"
 }
 
 resource "oci_core_subnet" "public_subnet" {
@@ -74,26 +74,26 @@ resource "oci_core_security_list" "sl_sub_pub" {
 
 resource "oci_core_security_list" "sl_sub_priv" {
   compartment_id = oci_identity_compartment.app_compartment.id
-  vcn_id         = oci_core_vcn.app_vcn.id
+  vcn_id         = oci_core_vcn.vcn_app.id
   display_name   = "SL_SUB_PRIV"
   # Add your security rules here
 }
 
 resource "oci_core_internet_gateway" "igw" {
   compartment_id = oci_identity_compartment.app_compartment.id
-  vcn_id         = oci_core_vcn.app_vcn.id
+  vcn_id         = oci_core_vcn.vcn_app.id
   display_name   = "Internet_Gateway"
 }
 
 resource "oci_core_nat_gateway" "natgw" {
   compartment_id = oci_identity_compartment.app_compartment.id
-  vcn_id         = oci_core_vcn.app_vcn.id
+  vcn_id         = oci_core_vcn.vcn_app.id
   display_name   = "NAT_Gateway"
 }
 
 resource "oci_core_service_gateway" "sgw" {
   compartment_id = oci_identity_compartment.app_compartment.id
-  vcn_id         = oci_core_vcn.app_vcn.id
+  vcn_id         = oci_core_vcn.vcn_app.id
   display_name   = "Service_Gateway"
   # Define services to enable on the service gateway
 }
@@ -107,7 +107,7 @@ resource "oci_core_public_ip" "public_lb_ip" {
   lifetime       = "RESERVED"
 
   # Assigning to a specific VCN if required
-  # vcn_id = oci_core_vcn.app_vcn.id
+  # vcn_id = oci_core_vcn.vcn_app.id
 
   # Assigning to a specific private IP if required
   # private_ip_id = oci_core_private_ip.example.id
