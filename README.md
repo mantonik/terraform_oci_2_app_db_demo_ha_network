@@ -28,9 +28,7 @@ git clone --single-branch --branch dev  git@github.com:mantonik/terraform_oci_2_
 
 # pull changes 
 
-git pull 
 
 git fetch origin dev
-
-git merge origin/dev 
+git pull
 
