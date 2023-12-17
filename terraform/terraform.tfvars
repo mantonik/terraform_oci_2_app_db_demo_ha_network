@@ -1,0 +1,7 @@
+SSH_PUB_KEY     = "ssh-rsa AAAUHJHG12345..."
+VCN_APP_CIDR    = "10.20.10.0/24"
+SUB_PUB_CIDR    = "10.20.10.0/27"
+SUB_PRIV_CIDR   = "10.20.10.32/27"
+SERVER_APP1_IP  = "10.20.10.11"
+SERVER_APP2_IP  = "10.20.10.12"
+DOMAIN_NAME     = "ocidemo.ddns.net"
