@@ -44,5 +44,13 @@ git pull
 
 Apply changes 
 
-chmod 755 build.sh 
+# if there is change in terra form confugraiton 
+terraform init
+
+# test terra form script 
+terraform plan 
+
+# apply 
+terraform aply
+
 
