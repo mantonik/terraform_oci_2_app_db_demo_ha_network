@@ -49,8 +49,8 @@ resource "oci_core_security_list" "sl_sub_pub" {
     source   = "0.0.0.0/0"
 
     tcp_options {
-      "min" = 80
-      "max" = 80
+      min = 80
+      max = 80
     }
     description = "Allow HTTP traffic"
   }
@@ -60,8 +60,8 @@ resource "oci_core_security_list" "sl_sub_pub" {
     source   = "0.0.0.0/0"
 
     tcp_options {
-      "min" = 443
-      "max" = 443
+      min = 443
+      max = 443
     }
     description = "Allow HTTPS traffic"
   }
