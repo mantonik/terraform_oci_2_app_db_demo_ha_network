@@ -42,6 +42,14 @@ resource "oci_core_security_list" "sl_sub_pub" {
 
   egress_security_rules {
     # Your existing egress rules (if any)
+    protocol = "6" # TCP protocol
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      min = 443
+      max = 443
+    }
+    description = "Allow outgoing HTTP traffic"
   }
 
   ingress_security_rules {
