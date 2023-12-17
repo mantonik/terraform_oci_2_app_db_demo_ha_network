@@ -43,3 +43,6 @@ git pull
 ===================================
 
 Apply changes 
+
+chmod 755 build.sh 
+

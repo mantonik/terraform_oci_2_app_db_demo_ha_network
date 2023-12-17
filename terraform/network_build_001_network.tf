@@ -5,10 +5,10 @@
 provider "oci" {
   # Authentication details
 }
-
+  
 resource "oci_identity_compartment" "app_compartment" {
-  name        = "APP"
-  description = "Compartment for APP"
+  name        = "COM_APP"
+  description = "Compartment for applications"
   enable_delete = true
 }
 
@@ -100,7 +100,7 @@ resource "oci_core_service_gateway" "sgw" {
   services {
     service_id = "all"  # This represents all services in Oracle Services Network
   }
-  
+
 }
 
 ###################################
