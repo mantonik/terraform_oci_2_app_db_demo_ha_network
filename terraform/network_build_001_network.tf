@@ -96,6 +96,11 @@ resource "oci_core_service_gateway" "sgw" {
   vcn_id         = oci_core_vcn.vcn_app.id
   display_name   = "Service_Gateway"
   # Define services to enable on the service gateway
+
+  services {
+    service_id = "all"  # This represents all services in Oracle Services Network
+  }
+  
 }
 
 ###################################
