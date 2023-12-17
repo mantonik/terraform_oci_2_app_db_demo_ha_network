@@ -13,3 +13,8 @@ resource "oci_core_instance" "app1" {
 
 # Similar changes will be made throughout your Terraform configuration
 # where these variables are needed.
+# additinal comment
+
+################################
+# END
+################################
