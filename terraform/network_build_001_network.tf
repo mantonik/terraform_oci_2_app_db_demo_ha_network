@@ -20,7 +20,7 @@ resource "oci_core_vcn" "vcn_app" {
 
 resource "oci_core_subnet" "public_subnet" {
   compartment_id = oci_identity_compartment.app_compartment.id
-  vcn_id         = oci_core_vcn.app_vcn.id
+  vcn_id         = oci_core_vcn.vcn_app.id
   cidr_block     = "10.20.10.0/27"
   display_name   = "Public_Subnet"
   security_list_ids = [oci_core_security_list.sl_sub_pub.id]
@@ -28,7 +28,7 @@ resource "oci_core_subnet" "public_subnet" {
 
 resource "oci_core_subnet" "private_subnet" {
   compartment_id = oci_identity_compartment.app_compartment.id
-  vcn_id         = oci_core_vcn.app_vcn.id
+  vcn_id         = oci_core_vcn.vcn_app.id
   cidr_block     = "10.20.10.32/27"
   display_name   = "Private_Subnet"
   security_list_ids = [oci_core_security_list.sl_sub_priv.id]
@@ -36,7 +36,7 @@ resource "oci_core_subnet" "private_subnet" {
 
 resource "oci_core_security_list" "sl_sub_pub" {
   compartment_id = oci_identity_compartment.app_compartment.id
-  vcn_id         = oci_core_vcn.app_vcn.id
+  vcn_id         = oci_core_vcn.vcn_app.id
   display_name   = "SL_SUB_PUB"
   # Add your security rules here
 
